@@ -1,0 +1,18 @@
+import sys
+
+
+x, y = [int(i) for i in input().split()]
+
+for line in sys.stdin:
+    count = -1
+    word = 0
+    line_int = [int(i) for i in line.split()]
+    for i in set(line_int):
+        if i >= x and i <= y:
+            line_count = line_int.count(i)
+            if line_count > count:
+                count = line_count
+                word = i
+            elif line_count == count and i > word:
+                word = i
+    print('Буква - ', word, 'Встречалась - ', count)

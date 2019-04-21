@@ -1,0 +1,12 @@
+def sorted2(data, key=lambda x: -x):
+    line_list = []
+    for j in range(len(data[0])):
+        for i in range(len(data)):
+            line_list.append(data[i][j])
+    line_list = sorted(line_list, key=key)
+    count = 0
+    for j in range(len(data[0])):
+        for i in range(len(data)):
+            data[i][j] = line_list[count]
+            count += 1
+    return data
